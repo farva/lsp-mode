@@ -311,7 +311,8 @@ defaults to half of your CPU cores."
                         :goimportsLocalPrefix ,lsp-clients-go-imports-local-prefix
                         :maxParallelism ,lsp-clients-go-max-parallelism
                         :useBinaryPkgCache ,lsp-clients-go-use-binary-pkg-cache
-                        :diagnosticsEnabled ,lsp-clients-go-diagnostics-enabled))
+                        :diagnosticsEnabled ,lsp-clients-go-diagnostics-enabled
+			:BuildContext (:BuildTags '("!windows"))))
 
 (lsp-register-client
  (make-lsp-client :new-connection (lsp-stdio-connection (lambda () lsp-clients-go-server))
