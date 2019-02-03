@@ -318,18 +318,18 @@ defaults to half of your CPU cores."
                   :major-modes '(go-mode)
                   :priority -1
                   :initialization-options 'lsp-clients-go--make-init-options
-                  :server-id 'go-bingo
-                  :library-folders-fn (lambda (_workspace)
-                                        lsp-clients-go-library-directories)))
-
-(lsp-register-client
- (make-lsp-client :new-connection (lsp-stdio-connection "go-langserver")
-                  :major-modes '(go-mode)
-                  :priority -2
-                  :initialization-options 'lsp-clients-go--make-init-options
                   :server-id 'go-ls
                   :library-folders-fn (lambda (_workspace)
                                         lsp-clients-go-library-directories)))
+
+;; (lsp-register-client
+;;  (make-lsp-client :new-connection (lsp-stdio-connection "go-langserver")
+;;                   :major-modes '(go-mode)
+;;                   :priority -2
+;;                   :initialization-options 'lsp-clients-go--make-init-options
+;;                   :server-id 'go-ls
+;;                   :library-folders-fn (lambda (_workspace)
+;;                                         lsp-clients-go-library-directories)))
 
 
 ;; RUST
